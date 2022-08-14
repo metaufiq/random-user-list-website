@@ -18,5 +18,6 @@ export type GetListUserResponses = {
 }
 
 export type Params = {
-  keyword?: string
+  keyword?: string,
+  gender?: string
 }
