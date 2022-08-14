@@ -23,15 +23,19 @@ const _onGenderChange = (setGender: SetGender)=>(event: React.ChangeEvent<HTMLSe
   setGender(event.target.value)
 }
 
+const _onGenderReset = (setGender: SetGender)=>()=>{
+  setGender('')
+}
+
 const UserList = () =>{
-  const {users, setSearchInput, setGender} = useUserQuery();
+  const {users, setSearchInput, setGender, gender} = useUserQuery();
 
   return (
     <div>
       <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
       <Button label="Search"/>
-      <Button label="Reset Filter"/>
-      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)}/>
+      <Button label="Reset Filter" onClick={_onGenderReset(setGender)}/>
+      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)} value={gender}/>
       <UserTable users={users}/>
       <PaginationBar currentIndex={1} totalPages={3}/>
     </div>
