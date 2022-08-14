@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 import { User } from "../../index.types";
 import { Params, User as UserFromAPI } from "../../api/randomUser/randomUser.api.types";
-import { SetUsers } from "./useUserQuery.hooks.types";
 import { TOTAL_PAGES } from "../../constants";
+import { SetUsers } from "./useUserQuery.hooks.types";
 
 const _convertUserToUserState = (user: UserFromAPI):User => ({
   email: user.email,
