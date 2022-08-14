@@ -16,3 +16,7 @@ export type User = {
 export type GetListUserResponses = {
   results: User[],
 }
+
+export type Params = {
+  keyword?: string
+}
