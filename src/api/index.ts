@@ -1,7 +1,7 @@
-import recruitmentTest from "./randomUser.api"
+import randomUser from "./randomUser"
 
 const api = {
-  recruitmentTest
+  randomUser
 }
 
 export default api;
