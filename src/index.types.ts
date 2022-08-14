@@ -5,3 +5,5 @@ export type User = {
   gender: string,
   regisDate: string
 }
+
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
