@@ -10,12 +10,17 @@ import useUserQuery from "../../hooks/useUserQuery/useUserQuery.hooks";
 import { SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
 
 const OPTIONS_FILTER:Option[] = [
+  {label:'All', value: undefined},
   {label:'Female', value: 'female'},
-  {label:'Male', value: 'Male'},
+  {label:'Male', value: 'male'},
 ]
 
 const _onSearchChange=(setSearchInput: SetSearchInput)=>(event: React.ChangeEvent<HTMLInputElement>)=>{
   setSearchInput(event.target.value)
+}
+
+const _onGenderChange = (event: React.ChangeEvent<HTMLSelectElement>)=>{
+
 }
 
 const UserList = () =>{
@@ -26,7 +31,7 @@ const UserList = () =>{
       <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
       <Button label="Search"/>
       <Button label="Reset Filter"/>
-      <SelectInput options={OPTIONS_FILTER} label='Gender'/>
+      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange}/>
       <UserTable users={users}/>
       <PaginationBar currentIndex={1} totalPages={3}/>
     </div>
