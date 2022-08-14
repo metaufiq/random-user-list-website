@@ -7,10 +7,10 @@ import { Option } from "../../components/SelectInput/SelectInput.component.types
 import TextInput from "../../components/TextInput";
 import UserTable from "../../components/UserTable";
 import useUserQuery from "../../hooks/useUserQuery/useUserQuery.hooks";
-import { SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
+import { SetGender, SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
 
 const OPTIONS_FILTER:Option[] = [
-  {label:'All', value: undefined},
+  {label:'All', value: ''},
   {label:'Female', value: 'female'},
   {label:'Male', value: 'male'},
 ]
@@ -19,19 +19,19 @@ const _onSearchChange=(setSearchInput: SetSearchInput)=>(event: React.ChangeEven
   setSearchInput(event.target.value)
 }
 
-const _onGenderChange = (event: React.ChangeEvent<HTMLSelectElement>)=>{
-
+const _onGenderChange = (setGender: SetGender)=>(event: React.ChangeEvent<HTMLSelectElement>)=>{
+  setGender(event.target.value)
 }
 
 const UserList = () =>{
-  const {users, setSearchInput} = useUserQuery();
+  const {users, setSearchInput, setGender} = useUserQuery();
 
   return (
     <div>
       <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
       <Button label="Search"/>
       <Button label="Reset Filter"/>
-      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange}/>
+      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)}/>
       <UserTable users={users}/>
       <PaginationBar currentIndex={1} totalPages={3}/>
     </div>
