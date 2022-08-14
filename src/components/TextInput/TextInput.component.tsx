@@ -7,6 +7,7 @@ const TextInput = (props: Props)=>{
       id={props.id}
       type={props.type}
       placeholder={props.placeholder}
+      onChange={props.onChange}
     />
   )
 }

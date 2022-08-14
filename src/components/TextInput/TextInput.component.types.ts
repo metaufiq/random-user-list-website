@@ -1,7 +1,8 @@
-import { HTMLInputTypeAttribute } from "react"
+import { ChangeEventHandler, HTMLInputTypeAttribute } from "react"
 
 export type Props = {
   placeholder: string,
   id: string,
-  type: HTMLInputTypeAttribute
+  type: HTMLInputTypeAttribute,
+  onChange: ChangeEventHandler<HTMLInputElement>
 }
