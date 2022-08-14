@@ -28,25 +28,33 @@ const _setUsersState = async (setUsers: SetUsers, params: Params)=>{
 const useQuery = (params: Params, setUsers: SetUsers)=>{
   useEffect(()=>{
     _setUsersState(setUsers, params)
-  }, [params]);
+  }, [params, setUsers]);
 }
 
-const useSearch = (searchInput:string, setParams: SetParams)=>{
+/**
+ * useDynamicParams
+ * @param {string} searchInput - search input
+ * @param {SetParams} setParams - setter for params query
+ * @returns {void} set params query
+ */
+const useDynamicParams = (searchInput:string, setParams: SetParams, gender:string): void=>{
   useEffect(()=>{
-    setParams((params)=>({...params,keyword: searchInput || undefined}))
-  }, [searchInput]);
+    setParams((params)=>({...params,keyword: searchInput || undefined, gender: gender || undefined}))
+  }, [searchInput, gender, setParams]);
 }
 
 const useUserQuery = () =>{
   const [users, setUsers] = useState<User[]>([]);
   const [searchInput, setSearchInput] = useState('');
+  const [gender, setGender] = useState('');
   const [params, setParams] = useState({})
 
   useQuery(params, setUsers)
-  useSearch(searchInput, setParams)
+  useDynamicParams(searchInput, setParams, gender)
 
   return {
     users,
+    setGender,
     setSearchInput
   }
 }
