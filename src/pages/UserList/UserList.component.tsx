@@ -6,8 +6,9 @@ import SelectInput from "../../components/SelectInput";
 import { Option } from "../../components/SelectInput/SelectInput.component.types";
 import TextInput from "../../components/TextInput";
 import UserTable from "../../components/UserTable";
+import { TOTAL_PAGES } from "../../constants";
 import useUserQuery from "../../hooks/useUserQuery/useUserQuery.hooks";
-import { SetGender, SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
+import { SetCurrentPage, SetGender, SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
 
 const OPTIONS_FILTER:Option[] = [
   {label:'All', value: ''},
@@ -27,8 +28,12 @@ const _onGenderReset = (setGender: SetGender)=>()=>{
   setGender('')
 }
 
+const _onMovePage = (setCurrentPage: SetCurrentPage)=>(index: number)=>()=>{
+  setCurrentPage(index)
+}
+
 const UserList = () =>{
-  const {users, setSearchInput, setGender, gender} = useUserQuery();
+  const {users, gender, currentPage, setSearchInput, setGender, setCurrentPage} = useUserQuery();
 
   return (
     <div>
@@ -37,7 +42,7 @@ const UserList = () =>{
       <Button label="Reset Filter" onClick={_onGenderReset(setGender)}/>
       <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)} value={gender}/>
       <UserTable users={users}/>
-      <PaginationBar currentIndex={1} totalPages={3}/>
+      <PaginationBar currentIndex={currentPage} totalPages={TOTAL_PAGES} onChange={_onMovePage(setCurrentPage)}/>
     </div>
   );
 }
