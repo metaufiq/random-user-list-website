@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 import { User } from "../../index.types";
 import { Params, User as UserFromAPI } from "../../api/randomUser/randomUser.api.types";
-import { TOTAL_PAGES } from "../../constants";
+import { USER_QUERY_PAGES, USER_QUERY_RESULTS } from "../../constants";
 import { SetUsers } from "./useUserQuery.hooks.types";
 
 const _convertUserToUserState = (user: UserFromAPI):User => ({
@@ -32,7 +32,8 @@ const useQuery = (searchInput: string, gender: string, page: number, setUsers: S
       keyword: searchInput || undefined,
       gender: gender || undefined,
       page,
-      pageSize: TOTAL_PAGES
+      pageSize: USER_QUERY_PAGES,
+      results: USER_QUERY_RESULTS
     }
     _setUsersState(setUsers, params)
   }, [searchInput, gender, page, setUsers]);
