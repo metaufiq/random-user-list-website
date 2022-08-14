@@ -31,6 +31,19 @@ const useQuery = (params: Params, setUsers: SetUsers)=>{
   }, [params, setUsers]);
 }
 
+const _setParams = (searchInput: string, gender: string) => (params: Params) => {
+  const newParams = params
+  
+  if (params.keyword !== searchInput) {
+    newParams['keyword'] = searchInput
+  }
+  if (params.gender !== gender) {
+    newParams['gender'] = gender
+  }
+
+  return newParams
+}
+
 /**
  * useDynamicParams
  * @param {string} searchInput - search input
@@ -39,7 +52,7 @@ const useQuery = (params: Params, setUsers: SetUsers)=>{
  */
 const useDynamicParams = (searchInput:string, setParams: SetParams, gender:string): void=>{
   useEffect(()=>{
-    setParams((params)=>({...params,keyword: searchInput || undefined, gender: gender || undefined}))
+    setParams(_setParams(searchInput, gender))
   }, [searchInput, gender, setParams]);
 }
 
