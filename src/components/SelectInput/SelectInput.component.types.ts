@@ -10,5 +10,6 @@ export type Props = {
   label: string,
   htmlFor?: string,
   id?: string,
-  onChange: ChangeEventHandler<HTMLSelectElement>
+  onChange: ChangeEventHandler<HTMLSelectElement>,
+  value?: string | number | readonly string[] | undefined
 }
