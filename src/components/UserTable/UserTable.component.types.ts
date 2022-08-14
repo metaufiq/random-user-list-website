@@ -1,5 +1,5 @@
-import { HTMLInputTypeAttribute } from "react"
+import { User } from "../../index.types"
 
 export type Props = {
-  data: any
+  users: User[]
 }
