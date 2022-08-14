@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../api";
 import { User } from "../../index.types";
 import { Params, User as UserFromAPI } from "../../api/randomUser/randomUser.api.types";
-import { SetParams, SetUsers } from "./useUserQuery.hooks.types";
+import { SetUsers } from "./useUserQuery.hooks.types";
 
 const _convertUserToUserState = (user: UserFromAPI):User => ({
   email: user.email,
@@ -25,48 +25,27 @@ const _setUsersState = async (setUsers: SetUsers, params: Params)=>{
   setUsers(users)
 }
 
-const useQuery = (params: Params, setUsers: SetUsers)=>{
+const useQuery = (searchInput: string, gender: string, setUsers: SetUsers)=>{
   useEffect(()=>{
+    const params = {
+      keyword: searchInput || undefined,
+      gender: gender || undefined
+    }
     _setUsersState(setUsers, params)
-  }, [params, setUsers]);
-}
-
-const _setParams = (searchInput: string, gender: string) => (params: Params) => {
-  const newParams = params
-  
-  if (params.keyword !== searchInput) {
-    newParams['keyword'] = searchInput
-  }
-  if (params.gender !== gender) {
-    newParams['gender'] = gender
-  }
-
-  return newParams
-}
-
-/**
- * useDynamicParams
- * @param {string} searchInput - search input
- * @param {SetParams} setParams - setter for params query
- * @returns {void} set params query
- */
-const useDynamicParams = (searchInput:string, setParams: SetParams, gender:string): void=>{
-  useEffect(()=>{
-    setParams(_setParams(searchInput, gender))
-  }, [searchInput, gender, setParams]);
+  }, [searchInput, gender, setUsers]);
 }
 
 const useUserQuery = () =>{
   const [users, setUsers] = useState<User[]>([]);
   const [searchInput, setSearchInput] = useState('');
   const [gender, setGender] = useState('');
-  const [params, setParams] = useState({})
 
-  useQuery(params, setUsers)
-  useDynamicParams(searchInput, setParams, gender)
+
+  useQuery(searchInput, gender, setUsers)
 
   return {
     users,
+    gender,
     setGender,
     setSearchInput
   }
