@@ -1,5 +1,3 @@
-import { NextComponentType, NextPageContext } from "next";
-
 import { Props } from "./PaginationBar.component.types";
 
 const _renderActiveButton = (index: number) => (
@@ -39,7 +37,7 @@ const _renderNextButton = (props: Props) => (
   </li>
 )
 
-const PaginationBar: NextComponentType<NextPageContext, {}, Props> = (props) => {
+const PaginationBar= (props: Props) => {
   const pageIndexes = new Array(props.totalPages).fill(0);
   
   return (
