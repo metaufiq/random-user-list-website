@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 import { SortIcon, SortIconAsc, SortIconDesc } from "../Icons";
 import reducer, { initialState } from "./UserTable.component.reducer";
-import { DataWithLabel, Props, ReducerState, SortBy } from "./UserTable.component.types";
+import { DataWithLabel, Props, ReducerDispatcher, ReducerState, SortBy, SortCondition } from "./UserTable.component.types";
 
 const DATA_WITH_LABEL: DataWithLabel = {
   username: 'Username',
@@ -33,9 +33,32 @@ const _renderIcon = (reducerState: ReducerState, key: SortBy)=>{
   return (<Icon size={12}/>)
 }
 
-const _renderHeader = (reducerState: ReducerState)=>((key:SortBy)=>(
+const _getNextSortConditionByReducerState = ({using, condition}: ReducerState, key: string):SortCondition=>{
+  if (using !== key) return 'ASCEND'
+  switch (condition) {
+    case 'ASCEND':
+      return "DESCEND"
+    
+    case 'DESCEND':
+      return undefined
+    default:
+      return undefined
+  }
+}
+
+const _getNextSortUsingReducerState = ({using, condition}: ReducerState, key: SortBy):SortBy|undefined=>{
+  if (condition === 'DESCEND') return undefined
+
+  return key
+}
+
+const _onClickHeader = (reducerState: ReducerState, key: SortBy, dispatch: ReducerDispatcher)=>()=>{
+  dispatch({payload:_getNextSortUsingReducerState(reducerState, key), type:_getNextSortConditionByReducerState(reducerState, key)})
+}
+
+const _renderHeader = (reducerState: ReducerState, dispatch: ReducerDispatcher)=>((key:SortBy)=>(
   <th scope="col" className="py-3 px-6" key={key}>
-    {DATA_WITH_LABEL[key]} {_renderIcon(reducerState, key)}
+    <div onClick={_onClickHeader(reducerState, key, dispatch)}>{DATA_WITH_LABEL[key]} {_renderIcon(reducerState, key)}</div>
   </th>
 ))
 
@@ -47,7 +70,7 @@ const UserTable = ({users}: Props)=>{
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
-                {DATA_WITH_LABEL_OBJECT.map((value: string)=>_renderHeader(state)(value as SortBy))}
+                {DATA_WITH_LABEL_OBJECT.map((value: string)=>_renderHeader(state, dispatch)(value as SortBy))}
               </tr>
           </thead>
           <tbody>

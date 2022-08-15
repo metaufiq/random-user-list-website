@@ -19,5 +19,7 @@ export type ReducerState = {
 
 export type ReducerAction = {
   type: SortCondition
-  payload: SortBy 
+  payload?: SortBy 
 }
+
+export type ReducerDispatcher = React.Dispatch<ReducerAction>
