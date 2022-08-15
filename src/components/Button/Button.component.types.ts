@@ -1,6 +1,4 @@
-import { HTMLInputTypeAttribute } from "react"
-
-export type Props = {
+export interface Props{
   label: string,
   onClick?: VoidFunction
 }
