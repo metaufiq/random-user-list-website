@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import PaginationBar from "../../components/PaginationBar";
 import SelectInput from "../../components/SelectInput";
 import { Option } from "../../components/SelectInput/SelectInput.component.types";
+import SelectInputWithButton from "../../components/SelectInputWithButton";
 import TextInput from "../../components/TextInput";
 import UserTable from "../../components/UserTable";
 import { SortBy, SortCondition } from "../../components/UserTable/UserTable.component.types";
@@ -60,10 +61,13 @@ const UserList = () =>{
     <div>
       <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
       <Button>Search</Button>
-      <Button onClick={_onGenderReset(setGender)}>
-        Reset Filter
-      </Button>
-      <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)} value={gender}/>
+      <SelectInputWithButton 
+        options={OPTIONS_FILTER} 
+        label='Gender'
+        resetButtonLabel="Reset Filter"
+        onReset={_onGenderReset(setGender)} 
+        onChange={_onGenderChange(setGender)} 
+        value={gender}/>
       <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
       <PaginationBar currentIndex={currentPage} totalPages={USER_QUERY_PAGES} onChange={_onMovePage(setCurrentPage)}/>
     </div>
