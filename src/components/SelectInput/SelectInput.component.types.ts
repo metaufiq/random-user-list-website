@@ -7,7 +7,7 @@ export type Option = {
 
 export type Props = {
   options: Option[],
-  label: string,
+  label?: string,
   htmlFor?: string,
   id?: string,
   onChange: ChangeEventHandler<HTMLSelectElement>,
