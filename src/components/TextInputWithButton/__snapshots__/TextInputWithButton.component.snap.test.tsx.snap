@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TextInputWithButton Snapshot should render normal TextInputWithButton 1`] = `
-Array [
+<div>
   <label
     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
   >
     label
-  </label>,
+  </label>
   <div
     className="flex flex-row"
   >
@@ -27,18 +27,18 @@ Array [
     >
       button label
     </button>
-  </div>,
-]
+  </div>
+</div>
 `;
 
 exports[`TextInputWithButton Snapshot should render normal TextInputWithButton with optional props 1`] = `
-Array [
+<div>
   <label
     className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
     htmlFor="htmlFor"
   >
     label
-  </label>,
+  </label>
   <div
     className="flex flex-row"
   >
@@ -60,6 +60,6 @@ Array [
     >
       button label
     </button>
-  </div>,
-]
+  </div>
+</div>
 `;
