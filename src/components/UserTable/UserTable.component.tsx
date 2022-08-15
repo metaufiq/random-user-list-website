@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 
 import { SortIcon, SortIconAsc, SortIconDesc } from "../Icons";
 import reducer, { initialState } from "./UserTable.component.reducer";
@@ -14,7 +14,7 @@ const DATA_WITH_LABEL: DataWithLabel = {
 
 const DATA_WITH_LABEL_OBJECT = Object.keys(DATA_WITH_LABEL).map(key=>key)
 
-const _getIconByReducerState = ({using, condition}: ReducerState, key: string)=>{
+const _getIconByReducerState = ({using, condition}: ReducerState, key?: string)=>{
   if (using !== key) return SortIcon
   switch (condition) {
     case 'ASCEND':
@@ -33,7 +33,7 @@ const _renderIcon = (reducerState: ReducerState, key: SortBy)=>{
   return (<Icon size={12}/>)
 }
 
-const _getNextSortConditionByReducerState = ({using, condition}: ReducerState, key: string):SortCondition=>{
+const _getNextSortConditionByReducerState = ({using, condition}: ReducerState, key?: string):SortCondition=>{
   if (using !== key) return 'ASCEND'
   switch (condition) {
     case 'ASCEND':
@@ -46,7 +46,7 @@ const _getNextSortConditionByReducerState = ({using, condition}: ReducerState, k
   }
 }
 
-const _getNextSortUsingReducerState = ({using, condition}: ReducerState, key: SortBy):SortBy|undefined=>{
+const _getNextSortUsingReducerState = ({condition}: ReducerState, key?: SortBy):SortBy|undefined=>{
   if (condition === 'DESCEND') return undefined
 
   return key
@@ -58,13 +58,22 @@ const _onClickHeader = (reducerState: ReducerState, key: SortBy, dispatch: Reduc
 
 const _renderHeader = (reducerState: ReducerState, dispatch: ReducerDispatcher)=>((key:SortBy)=>(
   <th scope="col" className="py-3 px-6" key={key}>
-    <div onClick={_onClickHeader(reducerState, key, dispatch)}>{DATA_WITH_LABEL[key]} {_renderIcon(reducerState, key)}</div>
+    <div onClick={_onClickHeader(reducerState, key, dispatch)}>{DATA_WITH_LABEL[key!]} {_renderIcon(reducerState, key)}</div>
   </th>
 ))
 
-const UserTable = ({users}: Props)=>{
+const useSort = (reducerState: ReducerState, props:Props)=>{
+  const {using, condition} = reducerState
+  useEffect(()=>{
+    props.onSort(using, condition)
+  },[reducerState])
+}
+
+const UserTable = (props: Props)=>{
   const [state, dispatch] = useReducer(reducer, initialState)
   
+  useSort(state, props)
+
   return(
   <div className="overflow-x-auto relative">
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -74,7 +83,7 @@ const UserTable = ({users}: Props)=>{
               </tr>
           </thead>
           <tbody>
-              {users.map(user=>(
+              {props.users.map(user=>(
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={user.email}>
                   <th scope="row" className="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       {user.username}
