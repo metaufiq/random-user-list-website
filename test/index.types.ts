@@ -1,7 +1,7 @@
 export type Props = any
 
 export type Config = {
-  props: Props,
+  props?: Props,
   desc: string
 }
 
