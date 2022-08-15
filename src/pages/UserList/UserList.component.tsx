@@ -42,7 +42,29 @@ const _onSort = (setSortCategory:SetSortCategory, setSortCondition: SetSortCondi
   setSortCondition(sortCondition)
 }
 
-const UserList = () =>{
+const _renderFilterBar = (gender:string, setSearchInput: SetSearchInput, setGender: SetGender) => (
+  <div className='grid md:grid-cols-3 mb-14 gap-4'>
+    <TextInputWithButton
+      id='search-user-input' 
+      placeholder="Search.." 
+      type={'search'}
+      onChange={_onSearchChange(setSearchInput)}
+      buttonLabel='Search'
+      label="Search"
+      onPress={()=>{}}
+    />
+    <SelectInputWithButton 
+      options={OPTIONS_FILTER} 
+      label='Gender'
+      resetButtonLabel="Reset Filter"
+      onReset={_onGenderReset(setGender)} 
+      onChange={_onGenderChange(setGender)} 
+      value={gender}
+    />
+  </div>
+)
+
+const UserList = () => {
   const [sortCategory, setSortCategory] = useState<SortBy>();
   const [sortCondition, setSortCondition] = useState<SortCondition>();
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,23 +81,8 @@ const UserList = () =>{
   const {users} = useUserQuery(useQueryParams);
 
   return (
-    <div>
-      <TextInputWithButton
-        id='search-user-input' 
-        placeholder="Search.." 
-        type={'search'}
-        onChange={_onSearchChange(setSearchInput)}
-        buttonLabel='Search'
-        label="Search"
-        onPress={()=>{}}
-      />
-      <SelectInputWithButton 
-        options={OPTIONS_FILTER} 
-        label='Gender'
-        resetButtonLabel="Reset Filter"
-        onReset={_onGenderReset(setGender)} 
-        onChange={_onGenderChange(setGender)} 
-        value={gender}/>
+    <div className="p-3">
+      {_renderFilterBar(gender, setSearchInput, setGender)}
       <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
       <PaginationBar currentIndex={currentPage} totalPages={USER_QUERY_PAGES} onChange={_onMovePage(setCurrentPage)}/>
     </div>
