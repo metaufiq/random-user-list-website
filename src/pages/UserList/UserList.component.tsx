@@ -6,6 +6,7 @@ import SelectInput from "../../components/SelectInput";
 import { Option } from "../../components/SelectInput/SelectInput.component.types";
 import SelectInputWithButton from "../../components/SelectInputWithButton";
 import TextInput from "../../components/TextInput";
+import TextInputWithButton from "../../components/TextInputWithButton";
 import UserTable from "../../components/UserTable";
 import { SortBy, SortCondition } from "../../components/UserTable/UserTable.component.types";
 import { USER_QUERY_PAGES } from "../../constants";
@@ -59,8 +60,15 @@ const UserList = () =>{
 
   return (
     <div>
-      <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
-      <Button>Search</Button>
+      <TextInputWithButton
+        id='search-user-input' 
+        placeholder="Search.." 
+        type={'search'}
+        onChange={_onSearchChange(setSearchInput)}
+        buttonLabel='Search'
+        label="Search"
+        onPress={()=>{}}
+      />
       <SelectInputWithButton 
         options={OPTIONS_FILTER} 
         label='Gender'
