@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButton 1`] = `
+Array [
+  <label
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+  >
+    label
+  </label>,
+  <div
+    className="flex flex-row"
+  >
+    <div
+      className="mr-2 flex-auto"
+    >
+      <select
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        onChange={[Function]}
+      >
+        <option
+          value="value"
+        >
+          label
+        </option>
+      </select>
+    </div>
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      onClick={[Function]}
+      type="button"
+    >
+      reset button label
+    </button>
+  </div>,
+]
+`;
+
+exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButton with optional props 1`] = `
+Array [
+  <label
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+    htmlFor="htmlFor"
+  >
+    label
+  </label>,
+  <div
+    className="flex flex-row"
+  >
+    <div
+      className="mr-2 flex-auto"
+    >
+      <select
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        id="id"
+        onChange={[Function]}
+        value="value"
+      >
+        <option
+          value="value"
+        >
+          label
+        </option>
+      </select>
+    </div>
+    <button
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      onClick={[Function]}
+      type="button"
+    >
+      reset button label
+    </button>
+  </div>,
+]
+`;
