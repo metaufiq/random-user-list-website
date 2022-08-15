@@ -1,3 +1,4 @@
+import { SortIcon, SortIconAsc, SortIconDesc } from "../Icons";
 import { Props } from "./UserTable.component.types";
 
 const UserTable = ({users}: Props)=>{
@@ -7,19 +8,19 @@ const UserTable = ({users}: Props)=>{
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                   <th scope="col" className="py-3 px-6">
-                      Username
+                      Username <SortIcon size={12}/>
                   </th>
                   <th scope="col" className="py-3 px-6">
-                      Name
+                      Name  <SortIconDesc size={13}/>
                   </th>
                   <th scope="col" className="py-3 px-6">
-                      Email
+                      Email <SortIconAsc size={13}/>
                   </th>
                   <th scope="col" className="py-3 px-6">
-                      Gender
+                      Gender <SortIcon size={12}/>
                   </th>
                   <th scope="col" className="py-3 px-6">
-                      Registered Date
+                      Registered Date <SortIcon size={12}/>
                   </th>
               </tr>
           </thead>
