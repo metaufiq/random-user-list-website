@@ -5,7 +5,7 @@ import { Props } from "./TextInputWithButton.component.types";
 
 const TextInputWithButton = ({label, htmlFor, id, onChange, type, buttonLabel, onPress, placeholder}: Props)=>{
   return(
-    <Fragment>
+    <div>
       <label htmlFor={htmlFor} className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
         {label}
       </label>
@@ -22,7 +22,7 @@ const TextInputWithButton = ({label, htmlFor, id, onChange, type, buttonLabel, o
           {buttonLabel}
         </Button>
       </div>
-    </Fragment>
+    </div>
 
   )
 }

@@ -5,7 +5,7 @@ import { Props } from "./SelectInputWithButton.component.types";
 
 const SelectInputWithButton = ({options, label, htmlFor, id, onChange, value, onReset, resetButtonLabel}: Props)=>{
   return(
-    <Fragment>
+    <div>
       <label htmlFor={htmlFor} className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">
         {label}
       </label>
@@ -22,7 +22,7 @@ const SelectInputWithButton = ({options, label, htmlFor, id, onChange, value, on
           {resetButtonLabel}
         </Button>
       </div>
-    </Fragment>
+    </div>
 
   )
 }
