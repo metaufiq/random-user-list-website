@@ -20,5 +20,3 @@ describe('ButtonSnapshot', () => {
 
   assertSnapshots(Button, configs);
 });
-
-export default {}
