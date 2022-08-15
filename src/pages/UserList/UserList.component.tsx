@@ -83,8 +83,12 @@ const UserList = () => {
   return (
     <div className="p-3">
       {_renderFilterBar(gender, setSearchInput, setGender)}
-      <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
-      <PaginationBar currentIndex={currentPage} totalPages={USER_QUERY_PAGES} onChange={_onMovePage(setCurrentPage)}/>
+      <div className="mt-4 mb-4">
+        <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
+      </div>
+      <div className="grid justify-items-end">
+        <PaginationBar currentIndex={currentPage} totalPages={USER_QUERY_PAGES} onChange={_onMovePage(setCurrentPage)}/>
+      </div>
     </div>
   );
 }
