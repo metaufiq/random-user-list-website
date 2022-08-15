@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 
-import Button from "../../components/Button";
 import PaginationBar from "../../components/PaginationBar";
-import SelectInput from "../../components/SelectInput";
 import { Option } from "../../components/SelectInput/SelectInput.component.types";
 import SelectInputWithButton from "../../components/SelectInputWithButton";
-import TextInput from "../../components/TextInput";
+import SeparatorLine from "../../components/SeparatorLine";
 import TextInputWithButton from "../../components/TextInputWithButton";
 import UserTable from "../../components/UserTable";
 import { SortBy, SortCondition } from "../../components/UserTable/UserTable.component.types";
@@ -83,6 +81,7 @@ const UserList = () => {
   return (
     <div className="p-3">
       {_renderFilterBar(gender, setSearchInput, setGender)}
+      <SeparatorLine/>
       <div className="mt-4 mb-4">
         <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
       </div>
