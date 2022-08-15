@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppSnapshot should render normal App 1`] = `
+<div>
+  <input
+    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+    id="search-user-input"
+    onChange={[Function]}
+    placeholder="Search.."
+    type="search"
+  />
+  <button
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    type="button"
+  >
+    Search
+  </button>
+  <button
+    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+    onClick={[Function]}
+    type="button"
+  >
+    Reset Filter
+  </button>
+  <label
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+  >
+    Gender
+  </label>
+  <select
+    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    onChange={[Function]}
+    value=""
+  >
+    <option
+      value=""
+    >
+      All
+    </option>
+    <option
+      value="female"
+    >
+      Female
+    </option>
+    <option
+      value="male"
+    >
+      Male
+    </option>
+  </select>
+  <div
+    className="overflow-x-auto relative"
+  >
+    <table
+      className="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th
+            className="py-3 px-6"
+            scope="col"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Username
+               
+              <svg
+                height={12}
+                viewBox="0 0 24 24"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            className="py-3 px-6"
+            scope="col"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Name
+               
+              <svg
+                height={12}
+                viewBox="0 0 24 24"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            className="py-3 px-6"
+            scope="col"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Email
+               
+              <svg
+                height={12}
+                viewBox="0 0 24 24"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            className="py-3 px-6"
+            scope="col"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Gender
+               
+              <svg
+                height={12}
+                viewBox="0 0 24 24"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+                />
+              </svg>
+            </div>
+          </th>
+          <th
+            className="py-3 px-6"
+            scope="col"
+          >
+            <div
+              onClick={[Function]}
+            >
+              Registered Date
+               
+              <svg
+                height={12}
+                viewBox="0 0 24 24"
+                width={12}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+                />
+              </svg>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+  <nav
+    aria-label="Page navigation example"
+  >
+    <ul
+      className="inline-flex -space-x-px"
+    >
+      <li>
+        <button
+          className="py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          Previous
+        </button>
+      </li>
+      <li>
+        <button
+          aria-current="page"
+          className="py-2 px-3 text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white"
+          onClick={[Function]}
+        >
+          1
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          2
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          3
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          4
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          5
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          6
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          7
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          8
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          9
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          10
+        </button>
+      </li>
+      <li>
+        <button
+          className="py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+          onClick={[Function]}
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
