@@ -5,7 +5,7 @@ exports[`ButtonSnapshot should render Button without onClick 1`] = `
   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
   type="button"
 >
-  label
+  children
 </button>
 `;
 
@@ -15,6 +15,6 @@ exports[`ButtonSnapshot should render normal Button 1`] = `
   onClick={[Function]}
   type="button"
 >
-  label
+  children
 </button>
 `;
