@@ -59,8 +59,10 @@ const UserList = () =>{
   return (
     <div>
       <TextInput id='search-user-input' placeholder="Search.." type={'search'} onChange={_onSearchChange(setSearchInput)}/>
-      <Button label="Search"/>
-      <Button label="Reset Filter" onClick={_onGenderReset(setGender)}/>
+      <Button>Search</Button>
+      <Button onClick={_onGenderReset(setGender)}>
+        Reset Filter
+      </Button>
       <SelectInput options={OPTIONS_FILTER} label='Gender' onChange={_onGenderChange(setGender)} value={gender}/>
       <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
       <PaginationBar currentIndex={currentPage} totalPages={USER_QUERY_PAGES} onChange={_onMovePage(setCurrentPage)}/>

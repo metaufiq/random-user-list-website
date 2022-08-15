@@ -4,7 +4,7 @@ import { Props } from "./Button.component.types";
 
 describe('ButtonSnapshot', () => {
   const mockProps:Props = {
-    label: 'label'
+    children: 'children'
   };
 
   const configs = [

@@ -1,4 +1,4 @@
 export interface Props{
-  label: string,
+  children: JSX.Element | string,
   onClick?: VoidFunction
 }
