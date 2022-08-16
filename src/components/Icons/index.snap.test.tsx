@@ -1,4 +1,4 @@
-import { SortIcon, SortIconAsc, SortIconDesc } from ".";
+import { SearchIcon, SortIcon, SortIconAsc, SortIconDesc } from ".";
 import { assertSnapshots } from "../../../test";
 import { Props } from "./index.types";
 
@@ -75,4 +75,29 @@ describe('SortIconDescSnapshot', () => {
   ];
 
   assertSnapshots(SortIconDesc, configs);
+});
+
+describe('SearchIconSnapshot', () => {
+  const sizeOnlyProps:Props = {
+    size: 2
+  };
+
+  const props:Props = {
+    size: 2,
+    color: 'red'
+  }
+
+  const configs = [
+    {
+      props,
+      desc: 'should render normal icon'
+    },
+    {
+      props: sizeOnlyProps,
+      desc: 'should render icon with custom color'
+    },
+
+  ];
+
+  assertSnapshots(SearchIcon, configs);
 });
