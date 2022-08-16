@@ -10,15 +10,14 @@ const TextInputWithButton = ({label, htmlFor, id, onChange, type, buttonLabel, o
         {label}
       </label>
       <div className="flex flex-row">
-        <div className="mr-2 flex-auto">
           <TextInput 
             id={id} 
             placeholder={placeholder} 
             type={type} 
             onChange={onChange}
+            roundedType={'left-only'}
           />
-        </div>
-        <Button onClick={onPress}>
+        <Button onClick={onPress} roundedType="right-only">
           {buttonLabel}
         </Button>
       </div>
