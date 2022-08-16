@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { SearchIcon } from "../../components/Icons";
 import PaginationBar from "../../components/PaginationBar";
 import { Option } from "../../components/SelectInput/SelectInput.component.types";
 import SelectInputWithButton from "../../components/SelectInputWithButton";
@@ -58,7 +59,7 @@ const _renderFilterBar = (
       placeholder="Search.." 
       type={'search'}
       onChange={_onSearchChange(setSearchInput)}
-      buttonLabel='Search'
+      buttonLabel={<SearchIcon size={24} color='white'/>}
       label="Search"
       onPress={_onSearchButtonPress(searchInput, setSearchInput)}
     />
