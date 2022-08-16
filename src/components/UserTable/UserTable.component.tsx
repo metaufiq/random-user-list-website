@@ -30,7 +30,7 @@ const _getIconByReducerState = ({using, condition}: ReducerState, key?: string)=
 const _renderIcon = (reducerState: ReducerState, key: SortBy)=>{
   const Icon = _getIconByReducerState(reducerState, key)
 
-  return (<Icon size={12}/>)
+  return (<Icon size={12} color='gray'/>)
 }
 
 const _getNextSortConditionByReducerState = ({using, condition}: ReducerState, key?: string):SortCondition=>{
@@ -58,7 +58,7 @@ const _onClickHeader = (reducerState: ReducerState, key: SortBy, dispatch: Reduc
 
 const _renderHeader = (reducerState: ReducerState, dispatch: ReducerDispatcher)=>((key:SortBy)=>(
   <th scope="col" className="py-3 px-6" key={key}>
-    <div onClick={_onClickHeader(reducerState, key, dispatch)}>{DATA_WITH_LABEL[key!]} {_renderIcon(reducerState, key)}</div>
+    <div onClick={_onClickHeader(reducerState, key, dispatch)} className="flex flex-row justify-between items-center">{DATA_WITH_LABEL[key!]} {_renderIcon(reducerState, key)}</div>
   </th>
 ))
 
