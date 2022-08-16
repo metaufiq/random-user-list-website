@@ -14,7 +14,7 @@ exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButt
       className="mr-2 flex-auto"
     >
       <select
-        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         onChange={[Function]}
       >
         <option
@@ -25,7 +25,7 @@ exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButt
       </select>
     </div>
     <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-sm focus:outline-none focus:shadow-outline"
       onClick={[Function]}
       type="button"
     >
@@ -50,7 +50,7 @@ exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButt
       className="mr-2 flex-auto"
     >
       <select
-        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         id="id"
         onChange={[Function]}
         value="value"
@@ -63,7 +63,7 @@ exports[`SelectInputWithButton Snapshot should render normal SelectInputWithButt
       </select>
     </div>
     <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-sm focus:outline-none focus:shadow-outline"
       onClick={[Function]}
       type="button"
     >
