@@ -5,4 +5,6 @@ export type Config = {
   desc: string
 }
 
+export type RoundedType = 'left-only' | 'right-only'
+
 export type Configs = Config[]
