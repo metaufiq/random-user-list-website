@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchIconSnapshot should render icon with custom color 1`] = `
+<svg
+  clip-rule="evenodd"
+  fill-rule="evenodd"
+  height={2}
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"
+  />
+</svg>
+`;
+
+exports[`SearchIconSnapshot should render normal icon 1`] = `
+<svg
+  clip-rule="evenodd"
+  fill="red"
+  fill-rule="evenodd"
+  height={2}
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"
+  />
+</svg>
+`;
+
+exports[`SortIconAscSnapshot should render icon with custom color 1`] = `
+<svg
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 0l-8 10h16l-8-10zm3.839 16l-3.839 4.798-3.839-4.798h7.678zm4.161-2h-16l8 10 8-10z"
+  />
+</svg>
+`;
+
+exports[`SortIconAscSnapshot should render normal icon 1`] = `
+<svg
+  fill="red"
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 0l-8 10h16l-8-10zm3.839 16l-3.839 4.798-3.839-4.798h7.678zm4.161-2h-16l8 10 8-10z"
+  />
+</svg>
+`;
+
+exports[`SortIconDescSnapshot should render icon with custom color 1`] = `
+<svg
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 3.202l3.839 4.798h-7.678l3.839-4.798zm0-3.202l-8 10h16l-8-10zm8 14h-16l8 10 8-10z"
+  />
+</svg>
+`;
+
+exports[`SortIconDescSnapshot should render normal icon 1`] = `
+<svg
+  fill="red"
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 3.202l3.839 4.798h-7.678l3.839-4.798zm0-3.202l-8 10h16l-8-10zm8 14h-16l8 10 8-10z"
+  />
+</svg>
+`;
+
+exports[`SortIconSnapshot should render icon with custom color 1`] = `
+<svg
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+  />
+</svg>
+`;
+
+exports[`SortIconSnapshot should render normal icon 1`] = `
+<svg
+  fill="red"
+  height={2}
+  viewBox="0 0 24 24"
+  width={2}
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12 0l8 10h-16l8-10zm8 14h-16l8 10 8-10z"
+  />
+</svg>
+`;

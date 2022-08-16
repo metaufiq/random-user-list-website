@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppSnapshot should render normal App 1`] = `<UserList />`;

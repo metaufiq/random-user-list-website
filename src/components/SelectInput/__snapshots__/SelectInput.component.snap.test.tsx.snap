@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInputSnapshot should render normal SelectInput 1`] = `
+Array [
+  <label
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+  >
+    label
+  </label>,
+  <select
+    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    onChange={[Function]}
+  >
+    <option
+      value="value"
+    >
+      label
+    </option>
+  </select>,
+]
+`;
+
+exports[`SelectInputSnapshot should render normal SelectInput with optional props 1`] = `
+Array [
+  <label
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
+    htmlFor="htmlFor"
+  >
+    label
+  </label>,
+  <select
+    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+    id="id"
+    onChange={[Function]}
+    value="value"
+  >
+    <option
+      value="value"
+    >
+      label
+    </option>
+  </select>,
+]
+`;
