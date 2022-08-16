@@ -10,7 +10,7 @@ export type Props = {
   id?: string,
   type: HTMLInputTypeAttribute,
   label: string,
-  buttonLabel: string,
+  buttonLabel: JSX.Element | string,
   htmlFor?: string,
   onChange: ChangeEventHandler<HTMLInputElement>,
   onPress: VoidFunction,
