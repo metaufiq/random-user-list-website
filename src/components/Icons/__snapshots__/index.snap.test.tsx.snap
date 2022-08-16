@@ -44,6 +44,7 @@ exports[`SortIconAscSnapshot should render icon with custom color 1`] = `
 
 exports[`SortIconAscSnapshot should render normal icon 1`] = `
 <svg
+  fill="red"
   height={2}
   viewBox="0 0 24 24"
   width={2}
@@ -70,6 +71,7 @@ exports[`SortIconDescSnapshot should render icon with custom color 1`] = `
 
 exports[`SortIconDescSnapshot should render normal icon 1`] = `
 <svg
+  fill="red"
   height={2}
   viewBox="0 0 24 24"
   width={2}
@@ -96,6 +98,7 @@ exports[`SortIconSnapshot should render icon with custom color 1`] = `
 
 exports[`SortIconSnapshot should render normal icon 1`] = `
 <svg
+  fill="red"
   height={2}
   viewBox="0 0 24 24"
   width={2}
