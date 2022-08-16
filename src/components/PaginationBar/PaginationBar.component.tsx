@@ -5,7 +5,7 @@ const _renderActiveButton = (props:Props, index: number) => (
     <button 
       onClick={props.onChange(index)} 
       aria-current="page" 
-      className="py-2 px-3 text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700"
+      className="py-2 px-3 leading-tight text-blue-600 bg-blue-50 border border-gray-300 hover:bg-blue-100 hover:text-blue-700"
       >
         {index}
     </button>
