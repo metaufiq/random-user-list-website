@@ -13,7 +13,7 @@ const SelectInput = ({options, label, htmlFor, id, onChange, value}: Props)=>{
         </label>}
       <select 
         id={id} 
-        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+        className="bg-white border border-gray-300 text-gray-900 text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
         value={value}
         onChange={onChange}>
         {options.map(option=><option value={option.value}>{option.label}</option>)}
