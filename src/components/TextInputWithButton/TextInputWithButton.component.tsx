@@ -17,7 +17,7 @@ const TextInputWithButton = ({label, htmlFor, id, onChange, type, buttonLabel, o
             onChange={onChange}
             roundedType={'left-only'}
           />
-        <Button onClick={onPress} roundedType="right-only">
+        <Button onClick={onPress} roundedType="right-only" type="PRIMARY">
           {buttonLabel}
         </Button>
       </div>
