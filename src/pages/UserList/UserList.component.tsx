@@ -10,6 +10,7 @@ import { SortBy, SortCondition } from "../../components/UserTable/UserTable.comp
 import { USER_QUERY_PAGES } from "../../constants";
 import useUserQuery from "../../hooks/useUserQuery/useUserQuery.hooks";
 import { Params as UseQueryParams, SetCurrentPage, SetGender, SetSearchInput } from "../../hooks/useUserQuery/useUserQuery.hooks.types";
+import { doDebounce } from "../../utils/index.utils";
 import { SetSortCategory, SetSortCondition } from "./UserList.component.types";
 
 const OPTIONS_FILTER:Option[] = [
@@ -19,7 +20,13 @@ const OPTIONS_FILTER:Option[] = [
 ]
 
 const _onSearchChange=(setSearchInput: SetSearchInput)=>(event: React.ChangeEvent<HTMLInputElement>)=>{
-  setSearchInput(event.target.value)
+  doDebounce(() => {
+    setSearchInput(event.target.value)
+  }, 1000)
+}
+
+const _onSearchButtonPress = (searchInput:string,setSearchInput: SetSearchInput)=>()=>{
+  setSearchInput(searchInput)
 }
 
 const _onGenderChange = (setGender: SetGender)=>(event: React.ChangeEvent<HTMLSelectElement>)=>{
@@ -40,7 +47,11 @@ const _onSort = (setSortCategory:SetSortCategory, setSortCondition: SetSortCondi
   setSortCondition(sortCondition)
 }
 
-const _renderFilterBar = (gender:string, setSearchInput: SetSearchInput, setGender: SetGender) => (
+const _renderFilterBar = (
+  gender:string,
+  searchInput: string,
+  setSearchInput: SetSearchInput,
+  setGender: SetGender) => (
   <div className='grid md:grid-cols-3 mb-14 gap-4'>
     <TextInputWithButton
       id='search-user-input' 
@@ -49,7 +60,7 @@ const _renderFilterBar = (gender:string, setSearchInput: SetSearchInput, setGend
       onChange={_onSearchChange(setSearchInput)}
       buttonLabel='Search'
       label="Search"
-      onPress={()=>{}}
+      onPress={_onSearchButtonPress(searchInput, setSearchInput)}
     />
     <SelectInputWithButton 
       options={OPTIONS_FILTER} 
@@ -80,7 +91,7 @@ const UserList = () => {
 
   return (
     <div className="p-3">
-      {_renderFilterBar(gender, setSearchInput, setGender)}
+      {_renderFilterBar(gender, searchInput, setSearchInput, setGender)}
       <SeparatorLine/>
       <div className="mt-4 mb-4">
         <UserTable users={users} onSort={_onSort(setSortCategory, setSortCondition)}/>
