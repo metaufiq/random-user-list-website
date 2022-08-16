@@ -2,7 +2,7 @@ import { assertSnapshots } from "../../../test";
 import SelectInput from ".";
 import { Props } from "./SelectInput.component.types";
 
-describe('TextInputSnapshot', () => {
+describe('SelectInputSnapshot', () => {
   const mockProps:Props = {
     onChange:()=>{},
     label: 'label',
